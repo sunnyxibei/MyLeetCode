@@ -12,6 +12,9 @@ import cn.com.timeriver.myleetcode.string.ValidPalindrome
 import org.jetbrains.anko.find
 import org.jetbrains.anko.toast
 
+
+private const val _VALID_PALINDROME = 0
+
 class MainActivity : AppCompatActivity() {
 
     private val _VALID_PALINDROME = 0
