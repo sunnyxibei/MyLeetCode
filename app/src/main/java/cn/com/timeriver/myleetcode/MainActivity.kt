@@ -8,17 +8,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import cn.com.timeriver.myleetcode.string.CountAndSay
 import cn.com.timeriver.myleetcode.string.ValidPalindrome
 import org.jetbrains.anko.find
 import org.jetbrains.anko.toast
 
 
 private const val _VALID_PALINDROME = 0
+private const val _COUNT_AND_SAY = 1
 
 class MainActivity : AppCompatActivity() {
-
-    private val _VALID_PALINDROME = 0
-
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
 
         val stringList = arrayListOf<String>()
         stringList.add("Valid Palindrome")
+        stringList.add("Count and Say")
         recyclerView.layoutManager = LinearLayoutManager(this)
         val listAdapter = ListAdapter(stringList)
         recyclerView.adapter = listAdapter
@@ -40,14 +41,18 @@ class MainActivity : AppCompatActivity() {
     private fun handleClick(position: Int) {
         when (position) {
             _VALID_PALINDROME -> showValidPalindromeResult()
+            _COUNT_AND_SAY -> showCountAndSayResult()
             else -> ""
         }
+    }
+
+    private fun showCountAndSayResult() {
+        toast(CountAndSay.getSequence(3))
     }
 
     private fun showValidPalindromeResult() {
         val sample = "A man, a plan, a canal: Panama"
         toast("$sample is a valid palindrome : ${ValidPalindrome.checkValidPalindrome(sample)}")
-
     }
 }
 
