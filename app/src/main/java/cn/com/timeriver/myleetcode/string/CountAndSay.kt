@@ -2,7 +2,7 @@ package cn.com.timeriver.myleetcode.string
 
 /**
  * Count and Say
- * 
+ *
  * 描述
  * The count-and-say sequence is the sequence of integers beginning as follows:
  * 1, 11, 21, 1211, 111221, ...
