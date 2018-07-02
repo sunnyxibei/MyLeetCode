@@ -22,7 +22,6 @@ class FileLoggingTree : Timber.Tree() {
             bufferedWriter = BufferedWriter(FileWriter(file))
             bufferedWriter.write(message)
             bufferedWriter.flush()
-
         } catch (e: IOException) {
             e.printStackTrace()
         } finally {

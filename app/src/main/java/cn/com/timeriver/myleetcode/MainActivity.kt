@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import cn.com.timeriver.myleetcode.array.removeDuplicates
+import cn.com.timeriver.myleetcode.other.MatrixPrinter
 import cn.com.timeriver.myleetcode.string.CountAndSay
 import cn.com.timeriver.myleetcode.string.ValidPalindrome
 import org.jetbrains.anko.find
@@ -18,6 +19,7 @@ import org.jetbrains.anko.toast
 private const val _VALID_PALINDROME = 0
 private const val _COUNT_AND_SAY = 1
 private const val _REMOVE_DUPLICATES = 2
+private const val _MATRIX_CLOCKWISELY = 3
 
 class MainActivity : AppCompatActivity() {
 
@@ -35,6 +37,7 @@ class MainActivity : AppCompatActivity() {
         stringList.add("Valid Palindrome")
         stringList.add("Count and Say")
         stringList.add("Remove Duplicates")
+        stringList.add("Print Matrix ClockWisely")
         recyclerView.layoutManager = LinearLayoutManager(this)
         val listAdapter = ListAdapter(stringList)
         recyclerView.adapter = listAdapter
@@ -46,6 +49,7 @@ class MainActivity : AppCompatActivity() {
             _VALID_PALINDROME -> showValidPalindromeResult()
             _COUNT_AND_SAY -> showCountAndSayResult()
             _REMOVE_DUPLICATES -> removeDuplicates(intArrayOf(1, 1, 2, 2, 3, 4, 5, 6, 10, 23, 32, 33))
+            _MATRIX_CLOCKWISELY -> MatrixPrinter.printMatrixClockWisely()
         }
     }
 

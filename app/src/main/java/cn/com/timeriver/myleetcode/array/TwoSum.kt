@@ -1,5 +1,7 @@
 package cn.com.timeriver.myleetcode.array
 
+import timber.log.Timber
+
 /**
  * Two Sum
  * 描述
@@ -12,6 +14,8 @@ package cn.com.timeriver.myleetcode.array
 object TwoSum {
 
     fun getTwoIndex(intArray: IntArray) {
+
+        Timber.tag("").d("")
 
     }
 
