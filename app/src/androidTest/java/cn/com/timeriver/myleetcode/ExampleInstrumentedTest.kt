@@ -2,6 +2,7 @@ package cn.com.timeriver.myleetcode
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
+import cn.com.timeriver.myleetcode.array.NumCount
 import cn.com.timeriver.myleetcode.other.MopNum
 import cn.com.timeriver.myleetcode.other.SimpleMopNum
 
@@ -22,7 +23,6 @@ class ExampleInstrumentedTest {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getTargetContext()
         assertEquals("cn.com.timeriver.myleetcode", appContext.packageName)
-        MopNum(100000).printMopNum()
-        SimpleMopNum(100000).printMopNum()
+        NumCount().printNumCount(534)
     }
 }
