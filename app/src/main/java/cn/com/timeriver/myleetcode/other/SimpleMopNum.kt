@@ -18,10 +18,9 @@ class SimpleMopNum(var n: Int) {
     val TAG = this::class.java.simpleName
 
     /**
-     * 暴力解法
-     * 1、首先判断数字是否是2
-     * 2、大于2时，对数字取余，余数是否是3
-     * 3、如果是素数，从2到该数字的平方根，判断是否能被整除
+     * 简单解法
+     * 1、根据MopNum的规则特征生产MopNum
+     * 2、判断是否是素数
      */
     fun printMopNum() {
         if (n < 2) {
