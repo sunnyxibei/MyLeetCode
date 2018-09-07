@@ -1,6 +1,6 @@
 package cn.com.timeriver.myleetcode
 
-import cn.com.timeriver.myleetcode.netease.getTheRightCoins
+import cn.com.timeriver.myleetcode.other.GetMaxNum
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
@@ -12,6 +12,8 @@ import org.junit.Test
 class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+        val array = intArrayOf(231, 24, 455, 46, 9, 1022)//9 46 455 24 231 1022
+        val maxNumFromArray = GetMaxNum.getMaxNumFromArray(array)
+        assertEquals(maxNumFromArray, 946455242311022)
     }
 }
