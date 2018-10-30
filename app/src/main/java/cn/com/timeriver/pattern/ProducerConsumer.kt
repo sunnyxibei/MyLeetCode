@@ -1,4 +1,4 @@
-package cn.com.timeriver.myleetcode.other
+package cn.com.timeriver.pattern
 
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info

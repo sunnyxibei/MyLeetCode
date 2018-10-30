@@ -2,7 +2,8 @@ package cn.com.timeriver.myleetcode
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
-import cn.com.timeriver.myleetcode.other.ProducerConsumer
+import cn.com.timeriver.pattern.ProducerConsumer
+import cn.com.timeriver.pattern.TestObserverDesignPattern
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -19,6 +20,6 @@ class ExampleInstrumentedTest {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getTargetContext()
         assertEquals("cn.com.timeriver.myleetcode", appContext.packageName)
-        ProducerConsumer.startWork()
+       TestObserverDesignPattern.testMessage()
     }
 }
