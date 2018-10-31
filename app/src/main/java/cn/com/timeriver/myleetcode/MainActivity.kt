@@ -13,15 +13,17 @@ import cn.com.timeriver.myleetcode.consumer.testBlock
 import cn.com.timeriver.myleetcode.other.MatrixPrinter
 import cn.com.timeriver.myleetcode.string.CountAndSay
 import cn.com.timeriver.myleetcode.string.ValidPalindrome
+import cn.com.timeriver.pattern.proxy.ProxyTest
 import org.jetbrains.anko.find
 import org.jetbrains.anko.toast
 
 
-private const val _VALID_PALINDROME = 0
-private const val _COUNT_AND_SAY = 1
-private const val _REMOVE_DUPLICATES = 2
-private const val _MATRIX_CLOCKWISELY = 3
-private const val _PRODUCER_CONSUMER = 4
+private const val VALID_PALINDROME = 0
+private const val COUNT_AND_SAY = 1
+private const val REMOVE_DUPLICATES = 2
+private const val MATRIX_CLOCKWISE = 3
+private const val PRODUCER_CONSUMER = 4
+private const val PROXY = 5
 
 class MainActivity : AppCompatActivity() {
 
@@ -41,6 +43,7 @@ class MainActivity : AppCompatActivity() {
         stringList.add("Remove Duplicates")
         stringList.add("Print Matrix ClockWisely")
         stringList.add("Producer & Consumer")
+        stringList.add("Proxy")
         recyclerView.layoutManager = LinearLayoutManager(this)
         val listAdapter = ListAdapter(stringList)
         recyclerView.adapter = listAdapter
@@ -49,12 +52,17 @@ class MainActivity : AppCompatActivity() {
 
     private fun handleClick(position: Int) {
         when (position) {
-            _VALID_PALINDROME -> showValidPalindromeResult()
-            _COUNT_AND_SAY -> showCountAndSayResult()
-            _REMOVE_DUPLICATES -> removeDuplicates(intArrayOf(1, 1, 2, 2, 3, 4, 5, 6, 10, 23, 32, 33))
-            _MATRIX_CLOCKWISELY -> MatrixPrinter.printMatrixClockWisely()
-            _PRODUCER_CONSUMER -> testBlock()
+            VALID_PALINDROME -> showValidPalindromeResult()
+            COUNT_AND_SAY -> showCountAndSayResult()
+            REMOVE_DUPLICATES -> removeDuplicates(intArrayOf(1, 1, 2, 2, 3, 4, 5, 6, 10, 23, 32, 33))
+            MATRIX_CLOCKWISE -> MatrixPrinter.printMatrixClockWisely()
+            PRODUCER_CONSUMER -> testBlock()
+            PROXY -> testProxy()
         }
+    }
+
+    private fun testProxy() {
+        ProxyTest.test()
     }
 
     private fun showCountAndSayResult() {
