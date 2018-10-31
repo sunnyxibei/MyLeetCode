@@ -19,4 +19,11 @@ public class ActionProxy implements Action {
         action.doSomething();
         Timber.tag("Proxy").d("after: 晚上要早点睡觉哦");
     }
+
+    @Override
+    public void coding() {
+        Timber.tag("Proxy").d("before: 打开IDE");
+        action.coding();
+        Timber.tag("Proxy").d("before: 关闭IDE");
+    }
 }

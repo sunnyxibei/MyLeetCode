@@ -24,6 +24,7 @@ private const val REMOVE_DUPLICATES = 2
 private const val MATRIX_CLOCKWISE = 3
 private const val PRODUCER_CONSUMER = 4
 private const val PROXY = 5
+private const val DYNAMIC_PROXY = 6
 
 class MainActivity : AppCompatActivity() {
 
@@ -44,6 +45,7 @@ class MainActivity : AppCompatActivity() {
         stringList.add("Print Matrix ClockWisely")
         stringList.add("Producer & Consumer")
         stringList.add("Proxy")
+        stringList.add("Dynamic Proxy")
         recyclerView.layoutManager = LinearLayoutManager(this)
         val listAdapter = ListAdapter(stringList)
         recyclerView.adapter = listAdapter
@@ -58,7 +60,12 @@ class MainActivity : AppCompatActivity() {
             MATRIX_CLOCKWISE -> MatrixPrinter.printMatrixClockWisely()
             PRODUCER_CONSUMER -> testBlock()
             PROXY -> testProxy()
+            DYNAMIC_PROXY -> testDynamicProxy()
         }
+    }
+
+    private fun testDynamicProxy() {
+        ProxyTest.testDynamic()
     }
 
     private fun testProxy() {

@@ -4,4 +4,6 @@ public interface Action {
 
     void doSomething();
 
+    void coding();
+
 }
