@@ -25,8 +25,12 @@ class NumCount {
             val weight = num % 10
             num /= 10
             count += num * base
-            if (weight == 1) count += n % base + 1//余数是1的情况
-            else if (weight > 1) count += base
+            if (weight == 1) {
+                //余数是1的情况
+                count += n % base + 1
+            } else if (weight > 1) {
+                count += base
+            }
             base *= 10
         }
         return count

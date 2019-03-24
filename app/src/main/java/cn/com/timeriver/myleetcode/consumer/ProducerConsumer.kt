@@ -1,6 +1,6 @@
 package cn.com.timeriver.myleetcode.consumer
 
-import android.util.Log
+import timber.log.Timber
 import java.util.*
 import java.util.concurrent.BlockingQueue
 import java.util.concurrent.Executors
@@ -39,18 +39,19 @@ class ProducerBlock(private var queue: BlockingQueue<Data>) : Runnable {
     override fun run() {
         var data: Data
         val random = Random()
-        Log.d(TAG, "start producing id :" + Thread.currentThread().id)
+        Timber.tag(TAG).d("start producing id :%s", Thread.currentThread().id)
         try {
             while (isRunning) {
                 data = Data(count.incrementAndGet())
-                Log.d(TAG, "$data 加入队列, 当前已经库存总数：${queue.size}")
+                Timber.tag(TAG).d("$data 加入队列, 当前已经库存总数：${queue.size}")
                 if (!queue.offer(data, 2, TimeUnit.SECONDS)) {
-                    Log.d(TAG, " 加入队列失败")
+                    Timber.tag(TAG).d(" 加入队列失败")
                 }
                 Thread.sleep(random.nextInt(SLEEP_MILL).toLong())
             }
         } catch (e: InterruptedException) {
             e.printStackTrace()
+            isRunning = false
             Thread.currentThread().interrupt()
         }
     }
@@ -62,12 +63,12 @@ class ProducerBlock(private var queue: BlockingQueue<Data>) : Runnable {
 }
 
 class ConsumerBlock(private var queue: BlockingQueue<Data>) : Runnable {
-    val random = Random()
+    private val random = Random()
     override fun run() {
-        Log.d(TAG, "start Consumer id : ${Thread.currentThread().id}")
+        Timber.tag(TAG).d("start Consumer id : ${Thread.currentThread().id}")
         while (true) {
             val data = queue.take()
-            Log.d(TAG, "$data 被消费, 当前剩余可消费数据个数 ${queue.size}")
+            Timber.tag(TAG).d("$data 被消费, 当前剩余可消费数据个数 ${queue.size}")
             Thread.sleep(random.nextInt(SLEEP_MILL).toLong())
         }
     }

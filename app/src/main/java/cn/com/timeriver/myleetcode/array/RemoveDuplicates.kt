@@ -14,7 +14,7 @@ import timber.log.Timber
 fun removeDuplicates(intArray: IntArray) {
 
     //Java中数组是不可变的，所以记录下新数组的长度后，返回的是新数组的[0,length)的数字
-    if (!intArray.isEmpty()) {
+    if (intArray.isNotEmpty()) {
         var index = 1
         for (i in 1 until intArray.size) {
             if (intArray[i] != intArray[i - 1]) {

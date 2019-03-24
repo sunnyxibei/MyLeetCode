@@ -2,8 +2,7 @@ package cn.com.timeriver.myleetcode
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
-import cn.com.timeriver.myleetcode.bytedance.Negative
-import cn.com.timeriver.myleetcode.bytedance.SetPart
+import cn.com.timeriver.myleetcode.consumer.testBlock
 import cn.com.timeriver.pattern.TestObserverDesignPattern
 import org.junit.Assert.assertEquals
 import org.junit.Test
@@ -23,7 +22,8 @@ class ExampleInstrumentedTest {
         assertEquals("cn.com.timeriver.myleetcode", appContext.packageName)
         TestObserverDesignPattern.testMessage()
 
-       // Negative.sortNegative()
-        SetPart.testPart()
+        // Negative.sortNegative()
+        // SetPart.testPart()
+        testBlock()
     }
 }

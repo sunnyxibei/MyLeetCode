@@ -1,6 +1,6 @@
 package cn.com.timeriver.myleetcode.bytedance;
 
-import android.util.Log;
+import timber.log.Timber;
 
 public class SetPart {
 
@@ -22,14 +22,14 @@ public class SetPart {
             }
         }
         for (int j = 0; j < a.length; j++) {
-            Log.d("sortNegative", String.valueOf(a[j]));
+            Timber.d(String.valueOf(a[j]));
         }
     }
 
     public void setParted1(int[] a, int left, int right) {
         if (left >= right || left == a.length || right == 0) {
-            for (int i = 0; i < a.length; i++) {
-                System.out.println(a[i]);
+            for (int anA : a) {
+                System.out.println(anA);
             }
             return;
         }
